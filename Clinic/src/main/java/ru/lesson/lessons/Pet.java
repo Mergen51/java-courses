@@ -13,7 +13,12 @@ public interface Pet {
 
     /***
      * Имя питомца.
-     * @return name.
      */
     String getName();
+
+    /**
+     * Изменяет имя питомца
+     * @param name имя.
+     */
+    void setName(String name);
 }

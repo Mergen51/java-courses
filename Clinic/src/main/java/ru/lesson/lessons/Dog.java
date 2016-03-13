@@ -1,15 +1,19 @@
 package ru.lesson.lessons;
 
 /**
- * Каласс Dog
+ * Реализация собаки.
  */
  public class Dog extends Animal implements Pet {
 
     /**
-     * Базовая реализация питомца.
+     * Имя питомца.
      */
     public String name;
 
+    /**
+     * Конструктор собаки
+     * @param name имя
+     */
     public Dog(String name) {
         this.name = name;
     }
@@ -18,9 +22,19 @@ package ru.lesson.lessons;
         System.out.println("Gav, Gav!");
     }
 
+    /**
+     * Возвращает имя собаки
+     * @return name имя.
+     */
     public String getName() {
         return this.name;
     }
+
+    /**
+     * Изменяет имя кота/кошки
+     * @param name имя.
+     */
+    public void setName(String name) { this.name = name; }
 
     public String toString() {
         return "Собака";

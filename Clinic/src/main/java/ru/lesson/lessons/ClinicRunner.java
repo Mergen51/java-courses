@@ -1,21 +1,22 @@
 package ru.lesson.lessons;
+
+import java.io.IOException;
+
 /**
  * Работа клиники.
  */
 
 public class ClinicRunner {
-     
-     public static void main(String[] args) {
 
-          Clinic clinic = new Clinic();
+     public static void main(String[] args) throws IOException {
 
+         /**
+          * Создание нового объекта Клиника, заполнение клиентами и запуск меню.
+          */
+         Clinic clinic = new Clinic();
          clinic.addClient(new Client("Brown", new Cat("Digy")));
          clinic.addClient(new Client("Nick", new Dog("Recs")));
          clinic.addClient(new Client("Sem", new Cat("Tom")));
-
-         for (int i = 0; i < clinic.clientCount - 1; i++) {
-             System.out.println(clinic.getClientAndPet(i).toString());
-         }
-
+         clinic.go();
      }
 }

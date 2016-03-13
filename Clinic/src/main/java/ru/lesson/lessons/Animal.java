@@ -3,7 +3,7 @@ package ru.lesson.lessons;
 /**
  * Абстрактный класс Animal
  */
- public class Animal {
+ public abstract class Animal {
 
 
 }

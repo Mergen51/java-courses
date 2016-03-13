@@ -12,7 +12,6 @@ class Client {
           this.pet = pet;
      }
 
-
      public String getId() {
           return id;
      }
@@ -22,7 +21,7 @@ class Client {
      }
 
      public String toString() {
-          return id + pet.toString();
+          return id + "-" + pet.toString() + " " + pet.getName();
      }
 
 }
