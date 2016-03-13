@@ -17,6 +17,8 @@ public class ClinicRunner {
          clinic.addClient(new Client("Brown", new Cat("Digy")));
          clinic.addClient(new Client("Nick", new Dog("Recs")));
          clinic.addClient(new Client("Sem", new Cat("Tom")));
+         clinic.addClient(new Client("Jon", new Dog("Jack")));
+         clinic.addClient(new Client("Luis", new Dog("Suares")));
          clinic.go();
      }
 }

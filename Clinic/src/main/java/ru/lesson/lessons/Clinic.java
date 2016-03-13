@@ -31,21 +31,6 @@ public class Clinic {
     }
 
     /**
-     * Ищет клиета по имени питомца.
-     * @param petName имя питомца.
-     */
-    public Client findClientsByPetName(final String petName) {
-        // TODO реализовать
-        Client client = null;
-        for (int i = 0; i < clients.size(); i++) {
-            if (clients.get(i).getPet().equals(petName)) {
-                client = clients.get(i);
-            }
-        }
-        return client;
-    }
-
-    /**
      * Ищет питомца по имени клиета.
      * @param id имя клиента.
      */
@@ -53,6 +38,20 @@ public class Clinic {
         Client client = null;
         for (int i = 0; i < clients.size(); i++) {
             if (clients.get(i).getId().equals(id)) {
+                client = clients.get(i);
+            }
+        }
+        return client;
+    }
+
+    /**
+     * Ищет клиета по имени питомца.
+     * @param petName имя питомца.
+     */
+    public Client findClientsByPetName(final String petName) {
+        Client client = null;
+        for (int i = 0; i < clients.size(); i++) {
+            if (clients.get(i).getPet().getName().equals(petName)) {
                 client = clients.get(i);
             }
         }
@@ -157,12 +156,16 @@ public class Clinic {
                         case 2:
                             soutId();
                             String id2 = reader.readLine();
-                            System.out.println("Найден клиент: " + findPetById(id2));
+                            if (findPetById(id2)!=null) {
+                                System.out.println("Найден клиент: " + findPetById(id2));
+                            } else System.out.println("Питомец не найден");
                             break;
                         case 3:
                             soutPetName();
                             String petName2 = reader.readLine();
-                            System.out.println(findPetById("Клиентк найден: " + findClientsByPetName(petName2)));
+                            if (findClientsByPetName(petName2)!=null) {
+                                System.out.println("Клиентк найден: " + findClientsByPetName(petName2));
+                            } else System.out.println("Клиент не найден");
                             break;
                         case 4:
                             soutId();
