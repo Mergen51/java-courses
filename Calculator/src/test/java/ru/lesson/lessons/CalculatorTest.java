@@ -35,7 +35,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testDivided() throws Exception {
+    public void testDivided() throws UserException{
         Calculator calculator = new Calculator();
         calculator.divided(4, 2);
         assertEquals(2, calculator.getResult());

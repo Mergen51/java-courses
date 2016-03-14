@@ -37,12 +37,13 @@ public class Calculator {
      /**
       * Метод производит деление.
       * @param a,b входящие параметры.
+      *@throws UserException Если произвоится деление на ноль выкидывает сообщение.
      */   
-     public void divided(int a, int b) {
+     public void divided(int a, int b) throws UserException {
           if (b != 0) {
                this.result = a / b ;
           } else {
-                 System.out.println("Error,  You can not divide by zero!");
+                 throw new UserException("Error,  You can not divide by zero!");
           }
      }
 

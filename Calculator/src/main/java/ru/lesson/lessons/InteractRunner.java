@@ -35,7 +35,11 @@ public class InteractRunner {
                          calc.multiply(Integer.valueOf(first), Integer.valueOf(second));
                          System.out.println("Result : " + calc.getResult());
                     } else if (operation.equals("divided")) {
-                         calc.divided(Integer.valueOf(first), Integer.valueOf(second));
+                         try {
+                              calc.divided(Integer.valueOf(first), Integer.valueOf(second));
+                         } catch (UserException e) {
+                              System.out.println(e.getMessage());
+                         }
                          System.out.println("Result : " + calc.getResult());
                     } else if (operation.equals("power")) {
                          calc.power(Integer.valueOf(first), Integer.valueOf(second));
