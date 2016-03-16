@@ -3,7 +3,7 @@ package ru.lesson.lessons;
 /**
  * Реализация кошки.
  */
- public class Cat extends Animal implements Pet {
+ public class Cat implements Pet {
 
     /**
      * Имя питомца.

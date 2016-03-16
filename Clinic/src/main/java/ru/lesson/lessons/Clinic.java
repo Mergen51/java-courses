@@ -18,7 +18,7 @@ public class Clinic {
      */
     public List<Client> clients;
     public Clinic() {
-        this.clients = new ArrayList<Client>();
+        this.clients = new ClinicArrayList<Client>();
     }
 
 
@@ -104,8 +104,8 @@ public class Clinic {
         if (this.clients.isEmpty()) {
             System.out.println("");
         }
-        for (Client client : clients) {
-            System.out.println(client.toString());
+        for (int i = 0; i < clients.size();i++ ) {
+            System.out.println(clients.get(i).toString());
         }
     }
 
