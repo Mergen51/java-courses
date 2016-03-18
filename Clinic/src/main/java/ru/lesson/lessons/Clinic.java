@@ -150,7 +150,7 @@ public class Clinic {
                             String id = reader.readLine();
                             soutPetName();
                             String pedName = reader.readLine();
-                            addClient(new Client(id, new Dog(pedName)));
+                            addClient(new Client(id, new Dog (pedName)));
                             System.out.println("Клиент добавлен.");
                             break;
                         case 2:

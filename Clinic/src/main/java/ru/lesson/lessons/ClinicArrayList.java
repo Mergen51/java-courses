@@ -14,6 +14,11 @@ public class ClinicArrayList<E> extends AbstractList<E> implements List<E> {
     private static final int initialCapacity = 10;
 
     /**
+     * Шаг увеличения массива
+     */
+    private static final int increasingStep = 10;
+
+    /**
      *Количество элемнтов в массиве
      */
     private int size;
@@ -96,6 +101,7 @@ public class ClinicArrayList<E> extends AbstractList<E> implements List<E> {
      */
     @Override
     public boolean add(E e) {
+        checkSize();
         clinicArray[this.size++] = e;
         return true;
     }
@@ -148,6 +154,15 @@ public class ClinicArrayList<E> extends AbstractList<E> implements List<E> {
         }
     }
 
+    private void checkSize() {
+        if (this.size + 1> this.clinicArray.length) {
+            E[] array = (E[]) new Object[this.size + increasingStep];
+            System.arraycopy(this.clinicArray, 0, array, 0, this.size);
+            this.clinicArray = array;
+
+        }
+    }
+
     private void fastRemove(int index) {
         checkIndex(index);
         int numMoved = this.size - index - 1;
@@ -156,6 +171,22 @@ public class ClinicArrayList<E> extends AbstractList<E> implements List<E> {
         clinicArray[--size] = null;
     }
 
+
+
+    /**
+     * Добавление нового элента списка по индексу
+     * @param index индекс
+     * @param element Елемент
+     */
+    public void add(int index, E element) {
+        checkIndex(index);
+        E[] array = (E[])new Object[this.size + 1];
+        System.arraycopy(this.clinicArray,0,array,0,index);
+        array[index] = element;
+        System.arraycopy(this.clinicArray,index,array,index+1,this.size - index);
+        this.clinicArray = array;
+        this.size++;
+    }
 
     public Object[] toArray() {
         return new Object[0];
@@ -203,10 +234,6 @@ public class ClinicArrayList<E> extends AbstractList<E> implements List<E> {
 
     public ListIterator<E> listIterator() {
         return null;
-    }
-
-    public void add(int index, E element) {
-
     }
 
     public boolean contains(Object o) {
